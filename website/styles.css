@@ -10,3 +10,5 @@
 #result-count{flex:1;min-width:0;overflow-wrap:anywhere}.result-context{max-width:100%;overflow-wrap:anywhere}.reset-button{flex-shrink:0}
 .wordmark{min-height:44px}
 @media(max-width:600px){.select-field:not(:first-child) select{font-size:16px}.connection{font-size:13px}.card-authors{font-size:11px}.detail-list{font-size:11px}}
+.browse-section{padding-top:28px}
+@media(max-width:600px){.part-button:after{content:none}.search-box{margin-bottom:16px}}

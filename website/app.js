@@ -215,8 +215,6 @@
   document.getElementById("empty-reset").addEventListener("click", reset);
   window.addEventListener("popstate", function () { state = parseState(window.location.search, themes); render(false); });
   document.getElementById("back-to-top").addEventListener("click", function (event) { event.preventDefault(); window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); });
-  document.getElementById("collection-total").textContent = String(records.length);
-  document.querySelector(".collection-seal").setAttribute("aria-label", records.length + "件の資料、第1部から第9部まで");
   var dates = records.map(function (r) { return r.checked_on; }).filter(Boolean).sort();
   if (dates.length) {
     var date = dates[dates.length - 1];

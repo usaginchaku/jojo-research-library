@@ -13,37 +13,20 @@
 <body id="top">
   <a class="skip-link" href="#library">資料一覧へ移動</a>
   <header class="site-header">
-    <a class="wordmark" href="./" aria-label="ジョジョ研究図書館 ホーム"><span class="mark" aria-hidden="true">✳</span><span>ジョジョ研究図書館<small>JOJO RESEARCH LIBRARY</small></span></a>
+    <a class="wordmark" href="./" aria-label="ジョジョ研究図書館 ホーム"><span class="mark" aria-hidden="true">✳</span><span>ジョジョ研究図書館</span></a>
     <a class="header-link" href="#about">この図書館について <span aria-hidden="true">↗</span></a>
   </header>
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="tiny-line" aria-hidden="true"></span> A READING ROOM FOR CURIOUS MINDS</p>
-        <h1 id="hero-title">奇妙な冒険を、<br><em>深く読む。</em></h1>
-        <p class="hero-description">物語の向こうにある、言葉、歴史、文化。<br class="desktop-break">ジョジョを入口に、知らなかった世界へ。</p>
-        <p class="hero-detail">無料で読める論文・学術資料を集めた、小さな研究図書館。</p>
-      </div>
-      <div class="collection-seal" aria-label="43件の資料、第1部から第9部まで">
-        <span class="seal-top">THE COLLECTION</span>
-        <div class="seal-numbers"><strong id="collection-total">43</strong><span>資料</span></div>
-        <span class="seal-rule" aria-hidden="true"></span>
-        <span class="seal-bottom">PART 01 — 09</span>
-        <span class="seal-star" aria-hidden="true">✦</span>
-      </div>
-    </section>
-
     <section class="browse-section" aria-labelledby="browse-title">
-      <div class="section-heading"><h2 id="browse-title"><span class="section-number">01</span> 冒険の部から探す</h2><p>あの物語を、もうひとつの視点で。</p></div>
+      <div class="section-heading"><h2 id="browse-title">部で絞り込む</h2></div>
       <div class="part-list" id="part-filters" role="group" aria-label="関連する部で絞り込む"></div>
     </section>
 
     <section class="library-section" id="library" aria-labelledby="library-title">
-      <div class="section-heading library-heading"><h2 id="library-title"><span class="section-number">02</span> 本棚をのぞく</h2><span class="collection-label">THE READING SHELF</span></div>
+      <div class="section-heading library-heading"><h2 id="library-title">資料を探す</h2></div>
       <form id="filter-form" class="filter-panel" role="search" aria-label="資料を検索">
-        <label class="search-label" for="search">気になる言葉から、探してみる</label>
-        <div class="search-box"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.6" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input id="search" name="q" type="search" autocomplete="off" placeholder="例：運命、服飾、ハワイ、オノマトペ" aria-describedby="search-help"><button class="search-button" type="submit">検索 <span aria-hidden="true">→</span></button></div>
-        <p class="search-help" id="search-help">題名・著者・テーマ・ジョジョとのつながりから検索できます。</p>
+        <label class="search-label" for="search">キーワード</label>
+        <div class="search-box"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.6" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><input id="search" name="q" type="search" autocomplete="off" placeholder="例：運命、服飾、ハワイ、オノマトペ"><button class="search-button" type="submit">検索 <span aria-hidden="true">→</span></button></div>
         <div class="select-row">
           <label class="select-field" for="theme-filter"><span>テーマ</span><select id="theme-filter" name="theme"><option value="">すべてのテーマ</option></select></label>
           <label class="select-field" for="relation-filter"><span>作品との関わり</span><select id="relation-filter" name="relation"><option value="">すべての資料</option><option value="direct">ジョジョ自体を扱う研究</option><option value="context">背景を知るための資料</option></select></label>
@@ -52,15 +35,15 @@
       </form>
       <div class="results-toolbar"><p id="result-count" role="status" aria-live="polite" aria-atomic="true">資料を読み込んでいます…</p><button id="reset-filters" class="reset-button" type="button">絞り込みを解除 <span aria-hidden="true">↺</span></button></div>
       <div class="record-grid" id="results"></div>
-      <div id="empty-state" class="empty-state" hidden><span aria-hidden="true">◇</span><h3>まだ、この棚には見つかりません。</h3><p>言葉を短くしたり、部やテーマの絞り込みを外してみてください。</p><button id="empty-reset" class="primary-button" type="button">すべての資料を見る <span aria-hidden="true">→</span></button></div>
+      <div id="empty-state" class="empty-state" hidden><h3>該当する資料がありません</h3><button id="empty-reset" class="primary-button" type="button">すべての資料を見る <span aria-hidden="true">→</span></button></div>
       <noscript><div class="empty-state"><p>検索画面にはJavaScriptが必要です。</p><a href="https://github.com/usaginchaku/jojo-research-library/blob/main/CATALOG.md">文献目録を開く</a></div></noscript>
     </section>
 
     <aside id="about" class="about-panel" aria-labelledby="about-title">
-      <div><p class="eyebrow">ABOUT THIS LIBRARY</p><h2 id="about-title">物語から、学問へ。<br>学問から、もう一度物語へ。</h2></div>
+      <div><h2 id="about-title">この図書館について</h2></div>
       <div class="about-text"><p>ジョジョそのものを論じる研究と、各部の文化・歴史・場所を理解する手がかりになる資料を収録しています。背景資料とのつながりは、この図書館の編集上の提案です。作者が実際に参照した資料と断定するものではありません。</p><p>論文に加え、学位論文・学術書・百科事典項目なども含みます。資料の種類と確認範囲は、それぞれの「資料の詳細」で確認できます。本文は外部の公開サイトで開きます。</p><div class="about-links"><a href="https://github.com/usaginchaku/jojo-research-library">文献目録・出典 <span aria-hidden="true">↗</span></a><a href="./exports/jojo-library.ris" download>Zotero用データ <span aria-hidden="true">↓</span></a></div></div>
     </aside>
   </main>
-  <footer class="site-footer"><span>JOJO RESEARCH LIBRARY</span><p>無料全文の確認：<time id="checked-date" datetime="2026-10-22">2026.10.22</time> · 公開状況は変わることがあります。</p><a href="#top" id="back-to-top">ページの上へ ↑</a></footer>
+  <footer class="site-footer"><p>無料全文の確認：<time id="checked-date" datetime="2026-10-22">2026.10.22</time> · 公開状況は変わることがあります。</p><a href="#top" id="back-to-top">ページの上へ ↑</a></footer>
 </body>
 </html>
