@@ -12,3 +12,8 @@
 @media(max-width:600px){.select-field:not(:first-child) select{font-size:16px}.connection{font-size:13px}.card-authors{font-size:11px}.detail-list{font-size:11px}}
 .browse-section{padding-top:28px}
 @media(max-width:600px){.part-button:after{content:none}.search-box{margin-bottom:16px}}
+
+/* Line breaking: avoid stray last characters */
+body{line-break:strict;text-wrap-style:pretty}
+h1,h2,h3,h4,h5,h6,button,label,summary,legend,dt,th{text-wrap-style:balance}
+[data-phrased]{word-break:keep-all;overflow-wrap:anywhere}
