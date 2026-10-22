@@ -4,6 +4,7 @@
 
 ## 読む
 
+- **[スマホ用の閲覧サイト](https://jojo-reading-room-usaginchaku.kanae256.chatgpt.site)** — 部・テーマ・言語・キーワードで絞り込み、無料全文と読書メモを開けます。現在は作成者本人用で、同じChatGPTアカウントでのログインが必要です。
 - **[資料目録](CATALOG.md)** — 全資料、直接研究と背景資料、全文リンク、確認範囲。
 - **部別の棚** — [第1部](parts/01.md) · [第2部](parts/02.md) · [第3部](parts/03.md) · [第4部](parts/04.md) · [第5部](parts/05.md) · [第6部](parts/06.md) · [第7部](parts/07.md) · [第8部](parts/08.md) · [第9部](parts/09.md)
 - **[読書メモ：宿命論と人生の意味](notes/jojo-001.md)** — 第5部「眠れる奴隷」の解釈。第5部終盤のネタバレを含みます。
@@ -32,9 +33,12 @@ Zoteroの「ファイル → インポート」でRISを選びます。部・分
 ```sh
 python scripts/build_catalog.py
 python scripts/build_catalog.py --check
+python scripts/build_website.py
 ```
 
 Markdownの目録・部別の棚・CSV・RISは同じデータから生成します。個別の読書メモは `notes/資料ID.md` に置き、[雛形](NOTE-TEMPLATE.md)を使えます。
+
+閲覧サイトのファイルは **[website/](website/)** に保存しています。外部ライブラリを使わない静的サイトです。`build_website.py` は目録データ・RIS・現在の読書メモ1件をサイト用に生成します。HTML・CSS・検索処理は同ディレクトリで管理します。GitHubへの更新だけでは、別途公開している閲覧サイトは更新されません。
 
 日常の収集をZoteroに移した後は、Zoteroで管理する書誌情報をこの目録へ反映する流れに切り替えます。現在のスクリプトにはZoteroとの自動同期はありません。両方を別々に編集する運用は避け、反映する元を決めてください。
 
@@ -50,4 +54,4 @@ PDF直リンクに加えて、書誌ページ・DOI・確認日を保存しま�
 
 - [Zotero](https://www.zotero.org/support/sync)：書誌情報等の同期は無料・無制限。添付ファイルのZotero Storage同期は無料300 MBで、ローカル保存容量とは別です。
 - [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)：GitHub Freeでは公開リポジトリから公開できます。
-- [Quartz](https://quartz.jzhao.xyz/)：Markdownのメモを、検索・相互リンクのある読書サイトへ発展させる選択肢です。このリポジトリは現在Markdownの図書館です。
+- 現在の閲覧サイト：ChatGPT Sitesで本人用として公開しています。GitHubは文献データとサイトファイルの保存先です。GitHub Pagesは未設定ですが、`website/` のファイルを別の静的ホスティングに移しても使えます。
